@@ -126,7 +126,7 @@ public class RadioTest {
     }
 
     @Test
-    public void snextMaxVolume() {
+    public void nextMaxVolume() {
         Radio radio = new Radio();
 
         radio.setCurrentVolume(101);
@@ -275,6 +275,16 @@ public class RadioTest {
         radio.prev();
 
         int expected = 9;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test () {
+        Radio radio = new Radio(14);
+
+        radio.setCurrentStation (13);
+
+        int expected = 13;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
